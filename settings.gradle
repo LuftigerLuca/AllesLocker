@@ -84,4 +84,4 @@ include(
         "domain"
 )
 
-rootProject.name = "CleanArchitectureExample"
+rootProject.name = "AllesLocker"

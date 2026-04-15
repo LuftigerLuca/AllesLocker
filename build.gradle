@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-    group = "eu.luftiger.cae"
+    group = "com.alleslocker.backend"
     version = "1.0"
 
     repositories {
