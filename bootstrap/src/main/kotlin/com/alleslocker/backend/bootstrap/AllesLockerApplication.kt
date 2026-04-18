@@ -9,12 +9,12 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
-@ComponentScan(basePackages = ["eu.luftiger.cae.bootstrap", "eu.luftiger.cae.web", "eu.luftiger.cae.persistence"])
-@EnableJpaRepositories(basePackages = ["eu.luftiger.cae.persistence"])
-@EntityScan(basePackages = ["eu.luftiger.cae.persistence"])
+@ComponentScan(basePackages = ["com.alleslocker.backend.bootstrap", "com.alleslocker.backend.web", "com.alleslocker.backend.persistence"])
+@EnableJpaRepositories(basePackages = ["com.alleslocker.backend.persistence"])
+@EntityScan(basePackages = ["com.alleslocker.backend.persistence"])
 @EnableConfigurationProperties(JwtProperties::class)
-open class CAEApplication
+open class AllesLockerApplication
 
 fun main(args: Array<String>) {
-    runApplication<CAEApplication>(*args)
+    runApplication<AllesLockerApplication>(*args)
 }

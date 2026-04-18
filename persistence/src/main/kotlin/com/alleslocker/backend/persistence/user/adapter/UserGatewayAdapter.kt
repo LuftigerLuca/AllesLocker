@@ -1,6 +1,6 @@
 package com.alleslocker.backend.persistence.user.adapter
 
-import eu.luftiger.cae.application.user.gateway.UserGateway
+import com.alleslocker.backend.application.user.gateway.UserGateway
 import com.alleslocker.backend.domain.user.User
 import com.alleslocker.backend.domain.user.UserId
 import com.alleslocker.backend.persistence.user.mapper.toDomain

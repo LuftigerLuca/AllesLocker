@@ -1,7 +1,7 @@
 package com.alleslocker.backend.persistence.factory
 
-import eu.luftiger.cae.application.common.factory.GatewayFactory
-import eu.luftiger.cae.application.common.gateway.Gateway
+import com.alleslocker.backend.application.common.factory.GatewayFactory
+import com.alleslocker.backend.application.common.gateway.Gateway
 import kotlin.reflect.KClass
 
 class GatewayFactoryImpl(

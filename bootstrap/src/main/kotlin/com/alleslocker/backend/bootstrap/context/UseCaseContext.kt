@@ -1,9 +1,9 @@
 package com.alleslocker.backend.bootstrap.context
 
-import eu.luftiger.cae.application.common.factory.GatewayFactory
-import eu.luftiger.cae.application.common.factory.UseCaseFactory
-import eu.luftiger.cae.application.common.factory.UseCaseFactoryImpl
-import eu.luftiger.cae.application.security.PasswordHasher
+import com.alleslocker.backend.application.common.factory.GatewayFactory
+import com.alleslocker.backend.application.common.factory.UseCaseFactory
+import com.alleslocker.backend.application.common.factory.UseCaseFactoryImpl
+import com.alleslocker.backend.application.security.PasswordHasher
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 

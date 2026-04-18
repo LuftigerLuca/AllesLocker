@@ -1,6 +1,6 @@
 package com.alleslocker.backend.web.common.security
 
-import eu.luftiger.cae.web.common.config.JwtProperties
+import com.alleslocker.backend.web.common.config.JwtProperties
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys

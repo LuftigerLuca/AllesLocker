@@ -36,26 +36,26 @@ class CleanArchitectureTest : FreeSpec({
 
         val layerRestrictions = mapOf(
             "domain" to listOf(
-                "eu.luftiger.cae.domain",
+                "com.alleslocker.backend.domain",
                 "java.util"
             ),
             "application" to listOf(
-                "eu.luftiger.cae.application",
-                "eu.luftiger.cae.domain",
+                "com.alleslocker.backend.application",
+                "com.alleslocker.backend.domain",
                 "java.util",
                 "kotlin.reflect"
             ),
             "persistence" to listOf(
-                "eu.luftiger.cae.persistence",
-                "eu.luftiger.cae.domain",
-                "eu.luftiger.cae.application",
+                "com.alleslocker.backend.persistence",
+                "com.alleslocker.backend.domain",
+                "com.alleslocker.backend.application",
                 "kotlin.reflect",
                 "jakarta.persistence",
                 "org.springframework"
             ),
             "web" to listOf(
-                "eu.luftiger.cae.web",
-                "eu.luftiger.cae.application",
+                "com.alleslocker.backend.web",
+                "com.alleslocker.backend.application",
                 "kotlin.reflect",
                 "jakarta.servlet",
                 "org.springframework",
@@ -69,7 +69,7 @@ class CleanArchitectureTest : FreeSpec({
         layerRestrictions.forEach { (layerName, allowedImports) ->
             "$layerName layer should not depend on unauthorized external packages" {
                 scope.files
-                    .withPackage("eu.luftiger.cae.$layerName..")
+                    .withPackage("com.alleslocker.backend.$layerName..")
                     .imports
                     .filter { imp ->
                         allowedImports.none { allowed -> imp.name.startsWith(allowed) }

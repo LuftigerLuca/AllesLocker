@@ -1,10 +1,10 @@
 package com.alleslocker.backend.web.user.presenter
 
-import eu.luftiger.cae.application.common.ErrorResponse
-import eu.luftiger.cae.application.user.dto.response.RegisterUserResponseDto
-import eu.luftiger.cae.web.common.presenter.JsonRestPresenter
-import eu.luftiger.cae.web.common.security.JwtService
-import eu.luftiger.cae.web.user.schema.response.RegisterUserResponseSchema
+import com.alleslocker.backend.application.common.ErrorResponse
+import com.alleslocker.backend.application.user.dto.response.RegisterUserResponseDto
+import com.alleslocker.backend.web.common.presenter.JsonRestPresenter
+import com.alleslocker.backend.web.common.security.JwtService
+import com.alleslocker.backend.web.user.schema.response.RegisterUserResponseSchema
 import jakarta.servlet.http.HttpServletResponse
 import org.apache.coyote.ErrorState
 import org.springframework.http.HttpStatus

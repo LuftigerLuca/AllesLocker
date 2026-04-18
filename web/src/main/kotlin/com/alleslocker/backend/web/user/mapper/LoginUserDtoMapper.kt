@@ -1,11 +1,11 @@
 package com.alleslocker.backend.web.user.mapper
 
-import eu.luftiger.cae.application.user.dto.request.LoginUserRequestDto
-import eu.luftiger.cae.application.user.dto.request.RegisterUserRequestDto
-import eu.luftiger.cae.application.user.dto.response.RegisterUserResponseDto
-import eu.luftiger.cae.web.user.schema.request.LoginUserRequestSchema
-import eu.luftiger.cae.web.user.schema.request.RegisterUserRequestSchema
-import eu.luftiger.cae.web.user.schema.response.RegisterUserResponseSchema
+import com.alleslocker.backend.application.user.dto.request.LoginUserRequestDto
+import com.alleslocker.backend.application.user.dto.request.RegisterUserRequestDto
+import com.alleslocker.backend.application.user.dto.response.RegisterUserResponseDto
+import com.alleslocker.backend.web.user.schema.request.LoginUserRequestSchema
+import com.alleslocker.backend.web.user.schema.request.RegisterUserRequestSchema
+import com.alleslocker.backend.web.user.schema.response.RegisterUserResponseSchema
 
 fun LoginUserRequestSchema.toDto() = LoginUserRequestDto(
     username = this.username,

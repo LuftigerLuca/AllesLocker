@@ -1,6 +1,6 @@
-package eu.luftiger.cae.web.common.presenter.factory
+package com.alleslocker.backend.web.common.presenter.factory
 
-import eu.luftiger.cae.web.common.presenter.JsonRestPresenter
+import com.alleslocker.backend.web.common.presenter.JsonRestPresenter
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
 import org.springframework.stereotype.Component

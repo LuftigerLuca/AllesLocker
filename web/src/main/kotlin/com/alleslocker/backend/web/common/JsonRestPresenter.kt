@@ -1,6 +1,6 @@
-package eu.luftiger.cae.web.common.presenter
+package com.alleslocker.backend.web.common.presenter
 
-import eu.luftiger.cae.application.common.OutputBoundary
+import com.alleslocker.backend.application.common.OutputBoundary
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

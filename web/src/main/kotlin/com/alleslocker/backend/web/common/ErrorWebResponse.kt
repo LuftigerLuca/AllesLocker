@@ -1,4 +1,4 @@
-package eu.luftiger.cae.web.common.model
+package com.alleslocker.backend.web.common.model
 
 data class ErrorWebResponse(
     val message: String,
