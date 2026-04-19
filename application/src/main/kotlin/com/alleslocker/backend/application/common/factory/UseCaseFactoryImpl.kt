@@ -1,7 +1,7 @@
 package com.alleslocker.backend.application.common.factory
 
 import com.alleslocker.backend.application.common.InputBoundary
-import com.alleslocker.backend.application.security.PasswordHasher
+import com.alleslocker.backend.application.common.security.PasswordHasher
 import com.alleslocker.backend.application.user.gateway.UserGateway
 import com.alleslocker.backend.application.user.usecase.LoginUserUseCase
 import com.alleslocker.backend.application.user.usecase.LoginUserUseCaseImpl

@@ -1,18 +1,14 @@
 package com.alleslocker.backend.application.user.usecase
 
-import com.alleslocker.backend.application.common.ErrorResponse
-import com.alleslocker.backend.application.common.OutputBoundary
-import com.alleslocker.backend.application.security.PasswordHasher
-import com.alleslocker.backend.application.user.dto.request.RegisterUserRequestDto
+import com.alleslocker.backend.application.common.security.PasswordHasher
 import com.alleslocker.backend.application.user.dto.response.RegisterUserResponseDto
-import com.alleslocker.backend.application.user.gateway.UserGateway
 import com.alleslocker.backend.domain.user.PasswordHash
 import com.alleslocker.backend.domain.user.User
 import com.alleslocker.backend.domain.user.UserId
 import com.alleslocker.backend.domain.user.Username
 
 internal class RegisterUserUseCaseImpl(
-    private val passwordHasher: com.alleslocker.backend.application.security.PasswordHasher,
+    private val passwordHasher: PasswordHasher,
     private val userGateway: com.alleslocker.backend.application.user.gateway.UserGateway
 ) : com.alleslocker.backend.application.user.usecase.RegisterUserUseCase {
 
