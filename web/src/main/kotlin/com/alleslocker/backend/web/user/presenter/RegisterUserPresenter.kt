@@ -1,5 +1,6 @@
 package com.alleslocker.backend.web.user.presenter
 
+import com.alleslocker.backend.application.common.ErrorResponse
 import com.alleslocker.backend.application.user.dto.response.RegisterUserResponseDto
 import com.alleslocker.backend.web.common.presenter.JsonRestPresenter
 import com.alleslocker.backend.web.common.security.JwtService
