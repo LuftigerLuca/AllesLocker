@@ -2,6 +2,9 @@ package com.alleslocker.backend.application.common.factory
 
 import com.alleslocker.backend.application.common.InputBoundary
 import com.alleslocker.backend.application.common.security.PasswordHasher
+import com.alleslocker.backend.application.lock.gateway.LockGateway
+import com.alleslocker.backend.application.lock.usecase.CreateLockUseCase
+import com.alleslocker.backend.application.lock.usecase.CreateLockUseCaseImpl
 import com.alleslocker.backend.application.person.gateway.PersonGateway
 import com.alleslocker.backend.application.person.usecase.CreatePersonUseCase
 import com.alleslocker.backend.application.person.usecase.CreatePersonUseCaseImpl
@@ -34,6 +37,9 @@ class UseCaseFactoryImpl(
             LoginUserUseCase::class to LoginUserUseCaseImpl(
                 passwordHasher = passwordHasher,
                 userGateway = gatewayFactory[UserGateway::class]
+            ),
+            CreateLockUseCase::class to CreateLockUseCaseImpl(
+                lockGateway = gatewayFactory[LockGateway::class]
             )
         )
 
