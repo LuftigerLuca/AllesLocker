@@ -68,6 +68,7 @@ internal class CreatePersonUseCaseImpl(
                 )
             )
         } catch (e: Exception) {
+            // TODO: What happens when it fails?
             presenter.presentFailure(ErrorResponse.InternalServerError("Failed to send to API: ${e.message ?: "Unknown error"}"))
             return
         }
