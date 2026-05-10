@@ -2,13 +2,16 @@ package com.alleslocker.backend.application.person.usecase
 
 import com.alleslocker.backend.application.common.ErrorResponse
 import com.alleslocker.backend.application.common.OutputBoundary
+import com.alleslocker.backend.application.person.adapter.PersonAdapter
+import com.alleslocker.backend.application.person.dto.request.AddPersonAdapterRequest
 import com.alleslocker.backend.application.person.dto.request.CreatePersonRequestDto
 import com.alleslocker.backend.application.person.dto.response.CreatePersonResponseDto
 import com.alleslocker.backend.application.person.gateway.PersonGateway
 import com.alleslocker.backend.domain.person.*
 
 internal class CreatePersonUseCaseImpl(
-    private val personGateway: PersonGateway
+    private val personGateway: PersonGateway,
+    private val personAdapter: PersonAdapter
 ) : CreatePersonUseCase {
 
     override fun execute(
@@ -53,6 +56,19 @@ internal class CreatePersonUseCaseImpl(
             personGateway.save(person)
         } catch (e: Exception) {
             presenter.presentFailure(ErrorResponse.InternalServerError("Failed to save person: ${e.message ?: "Unknown error"}"))
+            return
+        }
+        try {
+            personAdapter.addPerson(
+                AddPersonAdapterRequest(
+                    id = saved.id.value,
+                    firstname = saved.firstname.value,
+                    lastname = saved.lastname.value,
+                    email = saved.email.value
+                )
+            )
+        } catch (e: Exception) {
+            presenter.presentFailure(ErrorResponse.InternalServerError("Failed to send to API: ${e.message ?: "Unknown error"}"))
             return
         }
 
