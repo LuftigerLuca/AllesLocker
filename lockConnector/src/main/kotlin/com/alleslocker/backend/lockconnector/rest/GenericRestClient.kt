@@ -1,17 +1,15 @@
 ﻿package com.alleslocker.backend.lockconnector.rest
 
-import com.alleslocker.backend.lockconnector.config.ConnectionConfig
+import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestClient
+import org.springframework.web.client.body
 
 @Component
-class GenericRestClient(
-    private val config: ConnectionConfig
-) {
-    private val client: RestClient by lazy {
+class GenericRestClient() {
+    val client: RestClient by lazy {
         RestClient.builder()
-            .baseUrl(config.baseUrl)
             .build()
     }
     fun post(endpoint: String, body: Any, headers: Map<String, String> =emptyMap()) {
@@ -24,5 +22,19 @@ class GenericRestClient(
             .body(body)
             .retrieve()
             .toBodilessEntity()
+    }
+
+    inline fun <reified T> get(
+        endpoint: String,
+        headers: Map<String, String> = emptyMap()
+    ): T? {
+        return client.get()
+            .uri(endpoint)
+            .headers { header ->
+                headers.forEach { (k, v) -> header.set(k, v) }
+            }
+            .accept(MediaType.APPLICATION_JSON)
+            .retrieve()
+            .body(object : ParameterizedTypeReference<T>() {})
     }
 }
