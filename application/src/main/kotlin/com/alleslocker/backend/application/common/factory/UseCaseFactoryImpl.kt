@@ -2,6 +2,7 @@ package com.alleslocker.backend.application.common.factory
 
 import com.alleslocker.backend.application.common.InputBoundary
 import com.alleslocker.backend.application.common.security.PasswordHasher
+import com.alleslocker.backend.application.person.adapter.PersonAdapter
 import com.alleslocker.backend.application.person.gateway.PersonGateway
 import com.alleslocker.backend.application.person.usecase.CreatePersonUseCase
 import com.alleslocker.backend.application.person.usecase.CreatePersonUseCaseImpl
@@ -16,16 +17,19 @@ import kotlin.reflect.KClass
 
 class UseCaseFactoryImpl(
     private val gatewayFactory: GatewayFactory,
+    private val adapterFactory: AdapterFactory,
     private val passwordHasher: PasswordHasher,
 ) : UseCaseFactory {
 
     private val useCases: Map<KClass<out InputBoundary<*, *>>, InputBoundary<*, *>> =
         mapOf(
             CreatePersonUseCase::class to CreatePersonUseCaseImpl(
-                personGateway = gatewayFactory[PersonGateway::class]
+                personGateway = gatewayFactory[PersonGateway::class],
+                personAdapter = adapterFactory[PersonAdapter::class]
             ),
             DeletePersonUseCase::class to DeletePersonUseCaseImpl(
-                personGateway = gatewayFactory[PersonGateway::class]
+                personGateway = gatewayFactory[PersonGateway::class],
+                personAdapter = adapterFactory[PersonAdapter::class]
             ),
             RegisterUserUseCase::class to RegisterUserUseCaseImpl(
                 passwordHasher = passwordHasher,
